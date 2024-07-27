@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Button, HTag } from "../components"
+import { Button, HTag, Tag } from "../components"
 import Head from "next/head"
 import vercel from "../../public/vercel.svg"
 import PTag from "@/components/PTag/PTag"
@@ -27,6 +27,24 @@ export default function Home(): JSX.Element {
 				<PTag size='large'>Text</PTag>
 				<PTag size='medium'>Text</PTag>
 				<PTag size='small'>Text</PTag>
+				<Tag size='s' color='red'>
+					tag
+				</Tag>
+				<Tag size='m' color='green'>
+					tag
+				</Tag>
+				<Tag size='m' color='gray'>
+					tag
+				</Tag>
+				<Tag size='s' color='primary'>
+					tag
+				</Tag>
+				<Tag size='m' color='ghost'>
+					tag
+				</Tag>
+				<Tag size='s' color='ghost'>
+					tag
+				</Tag>
 			</main>
 		</>
 	)
