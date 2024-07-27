@@ -1,6 +1,8 @@
+import Image from "next/image"
 import { Button, HTag } from "../components"
 import Head from "next/head"
-
+import vercel from "../../public/vercel.svg"
+import PTag from "@/components/PTag/PTag"
 export default function Home(): JSX.Element {
 	return (
 		<>
@@ -17,9 +19,14 @@ export default function Home(): JSX.Element {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<main>
+				<Image src={vercel} alt='Vercel Logo' />
 				<HTag tag='h1'>Text</HTag>
 				<Button appearance='primary'>Button 1</Button>
 				<Button appearance='ghost'>Button 2</Button>
+
+				<PTag size='large'>Text</PTag>
+				<PTag size='medium'>Text</PTag>
+				<PTag size='small'>Text</PTag>
 			</main>
 		</>
 	)
