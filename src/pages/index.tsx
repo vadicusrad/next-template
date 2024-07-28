@@ -1,8 +1,8 @@
 import Head from "next/head"
 import { useState } from "react"
 import Rating from "@/components/Rating/Rating"
-import Layout from "@/Layout/Layout"
-export default function Home(): JSX.Element {
+import { withLayout } from "@/Layout/Layout"
+function Home(): JSX.Element {
 	const [rating, setRating] = useState(0)
 	return (
 		<>
@@ -19,13 +19,9 @@ export default function Home(): JSX.Element {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Layout>
-				<Rating
-					rating={rating}
-					isEditable={true}
-					setRating={setRating}
-				/>
-			</Layout>
+			<Rating rating={rating} isEditable={true} setRating={setRating} />
 		</>
 	)
 }
+
+export default withLayout(Home)
