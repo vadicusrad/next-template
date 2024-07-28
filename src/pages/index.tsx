@@ -1,9 +1,8 @@
-import Image from "next/image"
-import { Button, HTag, Tag } from "../components"
 import Head from "next/head"
-import vercel from "../../public/vercel.svg"
-import PTag from "@/components/PTag/PTag"
+import { useState } from "react"
+import Rating from "@/components/Rating/Rating"
 export default function Home(): JSX.Element {
+	const [rating, setRating] = useState(0)
 	return (
 		<>
 			<Head>
@@ -19,32 +18,11 @@ export default function Home(): JSX.Element {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<main>
-				<Image src={vercel} alt='Vercel Logo' />
-				<HTag tag='h1'>Text</HTag>
-				<Button appearance='primary'>Button 1</Button>
-				<Button appearance='ghost'>Button 2</Button>
-
-				<PTag size='large'>Text</PTag>
-				<PTag size='medium'>Text</PTag>
-				<PTag size='small'>Text</PTag>
-				<Tag size='s' color='red'>
-					tag
-				</Tag>
-				<Tag size='m' color='green'>
-					tag
-				</Tag>
-				<Tag size='m' color='gray'>
-					tag
-				</Tag>
-				<Tag size='s' color='primary'>
-					tag
-				</Tag>
-				<Tag size='m' color='ghost'>
-					tag
-				</Tag>
-				<Tag size='s' color='ghost'>
-					tag
-				</Tag>
+				<Rating
+					rating={rating}
+					isEditable={true}
+					setRating={setRating}
+				/>
 			</main>
 		</>
 	)
