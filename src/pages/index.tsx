@@ -1,6 +1,7 @@
 import Head from "next/head"
 import { useState } from "react"
 import Rating from "@/components/Rating/Rating"
+import Layout from "@/Layout/Layout"
 export default function Home(): JSX.Element {
 	const [rating, setRating] = useState(0)
 	return (
@@ -17,13 +18,14 @@ export default function Home(): JSX.Element {
 				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<main>
+
+			<Layout>
 				<Rating
 					rating={rating}
 					isEditable={true}
 					setRating={setRating}
 				/>
-			</main>
+			</Layout>
 		</>
 	)
 }
